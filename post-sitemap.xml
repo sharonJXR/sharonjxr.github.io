@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>sharonjxr.github.io/test.html</loc>
+        <lastmod>2017-10-19T06:36:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>sharonjxr.github.io/hello-world.html</loc>
         <lastmod>2017-09-05T07:15:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
