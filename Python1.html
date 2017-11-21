@@ -98,9 +98,12 @@
 <meta property="og:title" content="Python Game Asteroids - demo for projects in Repository">
 <meta property="og:url" content="sharonjxr.github.io/Python1.html">
 <meta property="og:site_name" content="Creative Mix">
+<meta property="og:image" content="sharonjxr.github.io/images/23.JPG">
+<meta property="og:image" content="sharonjxr.github.io/images/24.JPG">
 <meta property="og:updated_time" content="2017-07-09T07:23:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Game Asteroids - demo for projects in Repository">
+<meta name="twitter:image" content="sharonjxr.github.io/images/23.JPG">
 
 
 
@@ -331,7 +334,7 @@
           
               <div class="post-description">
                    
-<img src="images/r.jpg" > 
+<img src="images/22.JPG" > 
               </div>
           
 
@@ -348,7 +351,248 @@
       
 
       
-        
+        <h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="Link-for-game"><a href="#Link-for-game" class="headerlink" title="Link for game"></a><strong><em><u><a href="http://www.codeskulptor.org/#user43_sn5EYCyu40HcA0H_0.py" title="Link for game" target="_blank" rel="external">Link for game</a></u></em></strong></h2><p><img src="images/23.JPG"></p>
+<p><img src="images/24.JPG"></p>
+<h1 id="implementation-of-Spaceship-program-template-for-RiceRocks"><a href="#implementation-of-Spaceship-program-template-for-RiceRocks" class="headerlink" title="implementation of Spaceship - program template for RiceRocks"></a>implementation of Spaceship - program template for RiceRocks</h1><p><code>import simplegui</code><br><code>import math</code><br><code>import random</code></p>
+<h2 id="globals-for-user-interface"><a href="#globals-for-user-interface" class="headerlink" title="globals for user interface"></a>globals for user interface</h2><p>WIDTH = 800</p>
+<p>HEIGHT = 600<br>score = 0<br>lives = 3<br>time = 0.5<br>started = False<br>rock_group = set()<br>rock_remove = set()<br>missile_group = set()<br>missile_remove = set()<br>explosion_group = set()<br>explosion_remove = set()</p>
+<p>class ImageInfo:<br>    def <strong>init</strong>(self, center, size, radius = 0, lifespan = None, animated = False):<br>        self.center = center<br>        self.size = size<br>        self.radius = radius<br>        if lifespan:<br>            self.lifespan = lifespan<br>        else:<br>            self.lifespan = float(‘inf’)<br>        self.animated = animated</p>
+<pre><code>def get_center(self):
+    return self.center
+
+def get_size(self):
+    return self.size
+
+def get_radius(self):
+    return self.radius
+
+def get_lifespan(self):
+    return self.lifespan
+
+def get_animated(self):
+    return self.animated
+</code></pre><blockquote>
+<p>art assets created by Kim Lathrop, may be freely re-used in non-commercial projects, please credit Kim</p>
+</blockquote>
+<h2 id="Debris-Images"><a href="#Debris-Images" class="headerlink" title="Debris Images"></a>Debris Images</h2><blockquote>
+<p>debris images - debris1_brown.png, debris2_brown.png, debris3_brown.png, debris4_brown.png</p>
+<p>debris1_blue.png, debris2_blue.png, debris3_blue.png, debris4_blue.png, debris_blend.png</p>
+</blockquote>
+<p>debris_info = ImageInfo([320, 240], [640, 480])<br>debris_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/debris2_blue.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/debris2_blue.png</a>“)</p>
+<h2 id="nebula-images-nebula-brown-png-nebula-blue-png"><a href="#nebula-images-nebula-brown-png-nebula-blue-png" class="headerlink" title="nebula images - nebula_brown.png, nebula_blue.png"></a>nebula images - nebula_brown.png, nebula_blue.png</h2><p>nebula_info = ImageInfo([400, 300], [800, 600])<br>nebula_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/nebula_blue.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/nebula_blue.png</a>“)</p>
+<h2 id="splash-image"><a href="#splash-image" class="headerlink" title="splash image"></a>splash image</h2><p>splash_info = ImageInfo([200, 150], [400, 300])<br>splash_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/splash.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/splash.png</a>“)</p>
+<h2 id="ship-image"><a href="#ship-image" class="headerlink" title="ship image"></a>ship image</h2><p>ship_info = ImageInfo([45, 45], [90, 90], 35)<br>ship_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/double_ship.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/double_ship.png</a>“)</p>
+<h2 id="missile-image"><a href="#missile-image" class="headerlink" title="missile image"></a>missile image</h2><p>missile_info = ImageInfo([5,5], [10, 10], 3, 50)<br>missile_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/shot2.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/shot2.png</a>“)</p>
+<h2 id="asteroid-images"><a href="#asteroid-images" class="headerlink" title="asteroid images"></a>asteroid images</h2><p>asteroid_info = ImageInfo([45, 45], [90, 90], 40)<br>asteroid_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/asteroid_blue.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/asteroid_blue.png</a>“)</p>
+<h2 id="animated-explosion"><a href="#animated-explosion" class="headerlink" title="animated explosion"></a>animated explosion</h2><p>EXPLOSION_CENTER = [64, 64]<br>EXPLOSION_SIZE = [100, 100]<br>EXPLOSION_DIM = [17, 1]<br>explosion_info = ImageInfo([64, 64], [128, 128], 17, 500, True)<br>explosion_image = simplegui.load_image(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/explosion_alpha.png" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/explosion_alpha.png</a>“)</p>
+<h3 id="sound-assets-purchased-from-sounddogs-com"><a href="#sound-assets-purchased-from-sounddogs-com" class="headerlink" title="sound assets purchased from sounddogs.com"></a>sound assets purchased from sounddogs.com</h3><p>.ogg versions of sounds are also available, just replace .mp3 by .ogg</p>
+<p>soundtrack = simplegui.load_sound(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/soundtrack.mp3" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/soundtrack.mp3</a>“)<br>missile_sound = simplegui.load_sound(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/missile.mp3" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/missile.mp3</a>“)<br>missile_sound.set_volume(.5)<br>ship_thrust_sound = simplegui.load_sound(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/thrust.mp3" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/thrust.mp3</a>“)<br>explosion_sound = simplegui.load_sound(“<a href="http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/explosion.mp3" target="_blank" rel="external">http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/explosion.mp3</a>“)</p>
+<h2 id="helper-functions-to-handle-transformations"><a href="#helper-functions-to-handle-transformations" class="headerlink" title="helper functions to handle transformations"></a>helper functions to handle transformations</h2><pre><code>def angle_to_vector(ang):
+return [math.cos(ang), math.sin(ang)]
+def dist(p, q):
+return math.sqrt((p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2)
+</code></pre><h1 id="Ship-class"><a href="#Ship-class" class="headerlink" title="Ship class"></a>Ship class</h1><p>class Ship:</p>
+<pre><code>def __init__(self, pos, vel, angle, image, info):
+    self.pos = [pos[0], pos[1]]
+    self.vel = [vel[0], vel[1]]
+    self.thrust = False
+    self.angle = angle
+    self.angle_vel = 0
+    self.image = image
+    self.image_center = info.get_center()
+    self.image_size = info.get_size()
+    self.radius = info.get_radius()
+
+def draw(self,canvas):
+    if self.thrust:
+        canvas.draw_image(self.image, [self.image_center[0] + self.image_size[0], self.image_center[1]] , self.image_size,
+                          self.pos, self.image_size, self.angle)
+    else:
+        canvas.draw_image(self.image, self.image_center, self.image_size,
+                          self.pos, self.image_size, self.angle)
+    # canvas.draw_circle(self.pos, self.radius, 1, &quot;White&quot;, &quot;White&quot;)
+
+def update(self):
+    # update angle
+    self.angle += self.angle_vel
+
+    # update position
+    self.pos[0] = (self.pos[0] + self.vel[0]) % WIDTH
+    self.pos[1] = (self.pos[1] + self.vel[1]) % HEIGHT
+
+    # update velocity
+    if self.thrust:
+        acc = angle_to_vector(self.angle)
+        self.vel[0] += acc[0] * .1
+        self.vel[1] += acc[1] * .1
+
+    self.vel[0] *= .99
+    self.vel[1] *= .99
+
+def collide(self,obj2):
+    global rock_remove, lives
+    distance = dist(self.pos,obj2.pos)
+    if distance &lt; (self.radius+obj2.radius):
+        rock_remove.add(obj2)
+        lives -=1
+        return True
+
+def set_thrust(self, on):
+    self.thrust = on
+    if on:
+        ship_thrust_sound.rewind()
+        ship_thrust_sound.play()
+    else:
+        ship_thrust_sound.pause()
+
+def increment_angle_vel(self):
+    self.angle_vel += .05
+
+def decrement_angle_vel(self):
+    self.angle_vel -= .05
+
+def shoot(self):
+    global a_missile
+    forward = angle_to_vector(self.angle)
+    missile_pos = [self.pos[0] + self.radius * forward[0], self.pos[1] + self.radius * forward[1]]
+    missile_vel = [self.vel[0] + 6 * forward[0], self.vel[1] + 6 * forward[1]]
+    a_missile = Sprite(missile_pos, missile_vel, self.angle, 0, missile_image, missile_info, missile_sound)
+    missile_group.add(a_missile)
+</code></pre><p>​    </p>
+<h1 id="Sprite-class"><a href="#Sprite-class" class="headerlink" title="Sprite class"></a>Sprite class</h1><p>class Sprite:<br>    def <strong>init</strong>(self, pos, vel, ang, ang_vel, image, info, sound = None):<br>        self.pos = [pos[0],pos[1]]<br>        self.vel = [vel[0],vel[1]]<br>        self.angle = ang<br>        self.angle_vel = ang_vel<br>        self.image = image<br>        self.image_center = info.get_center()<br>        self.image_size = info.get_size()<br>        self.radius = info.get_radius()<br>        self.lifespan = info.get_lifespan()<br>        self.animated = info.get_animated()<br>        self.age = 0<br>        if sound:<br>            sound.rewind()<br>            sound.play()</p>
+<pre><code>def collide(self,obj2):
+    distance = dist(self.pos,obj2.pos)
+    if distance &lt; (self.radius+obj2.radius):
+        return True   
+
+def draw(self, canvas):
+    canvas.draw_image(self.image, self.image_center, self.image_size,
+                      self.pos, self.image_size, self.angle)
+
+def update(self):
+    # update angle
+    self.angle += self.angle_vel
+
+    # update position
+    self.pos[0] = (self.pos[0] + self.vel[0]) % WIDTH
+    self.pos[1] = (self.pos[1] + self.vel[1]) % HEIGHT
+
+
+def group_Collide(obj1,group2):
+global score
+for obj2 in group2:
+    if obj1.collide(obj2):
+        score +=1
+        missile_group.pop(obj1)
+        rock_remove.add(obj2)
+        explosion_group.add(obj2)
+</code></pre><h3 id="key-handlers-to-control-ship"><a href="#key-handlers-to-control-ship" class="headerlink" title="key handlers to control ship"></a>key handlers to control ship</h3><pre><code>def keydown(key):
+if key == simplegui.KEY_MAP[&apos;left&apos;]:
+    my_ship.decrement_angle_vel()
+elif key == simplegui.KEY_MAP[&apos;right&apos;]:
+    my_ship.increment_angle_vel()
+elif key == simplegui.KEY_MAP[&apos;up&apos;]:
+    my_ship.set_thrust(True)
+elif key == simplegui.KEY_MAP[&apos;space&apos;]:
+    my_ship.shoot()
+
+
+def keyup(key):
+if key == simplegui.KEY_MAP[&apos;left&apos;]:
+    my_ship.increment_angle_vel()
+elif key == simplegui.KEY_MAP[&apos;right&apos;]:
+    my_ship.decrement_angle_vel()
+elif key == simplegui.KEY_MAP[&apos;up&apos;]:
+    my_ship.set_thrust(False)
+</code></pre><h3 id="mouseclick-handlers-that-reset-UI-and-conditions-whether-splash-image-is-drawn"><a href="#mouseclick-handlers-that-reset-UI-and-conditions-whether-splash-image-is-drawn" class="headerlink" title="mouseclick handlers that reset UI and conditions whether splash image is drawn"></a>mouseclick handlers that reset UI and conditions whether splash image is drawn</h3><pre><code>def click(pos):
+global started,score
+score = 0
+center = [WIDTH / 2, HEIGHT / 2]
+size = splash_info.get_size()
+inwidth = (center[0] - size[0] / 2) &lt; pos[0] &lt; (center[0] + size[0] / 2)
+inheight = (center[1] - size[1] / 2) &lt; pos[1] &lt; (center[1] + size[1] / 2)
+if (not started) and inwidth and inheight:
+    started = True
+
+
+def draw(canvas):
+global time, started, lives, score
+
+# animiate background
+time += 1
+center = debris_info.get_center()
+size = debris_info.get_size()
+wtime = (time / 8) % center[0]
+canvas.draw_image(nebula_image, nebula_info.get_center(), nebula_info.get_size(), [WIDTH / 2, HEIGHT / 2], [WIDTH, HEIGHT])
+canvas.draw_image(debris_image, [center[0] - wtime, center[1]], [size[0] - 2 * wtime, size[1]], 
+                            [WIDTH / 2 + 1.25 * wtime, HEIGHT / 2], [WIDTH - 2.5 * wtime, HEIGHT])
+canvas.draw_image(debris_image, [size[0] - wtime, center[1]], [2 * wtime, size[1]], 
+                            [1.25 * wtime, HEIGHT / 2], [2.5 * wtime, HEIGHT])
+
+for item in explosion_group:
+    explosion_index = [time % EXPLOSION_DIM[0], (time // EXPLOSION_DIM[0]) % EXPLOSION_DIM[1]]
+    canvas.draw_image(explosion_image,[EXPLOSION_CENTER[0] + explosion_index[0] * EXPLOSION_SIZE[0],EXPLOSION_CENTER[1] + explosion_index[1] * EXPLOSION_SIZE[1]],EXPLOSION_SIZE, item.pos, EXPLOSION_SIZE)
+    explosion_remove.add(item)        
+explosion_group.difference_update(explosion_remove)
+
+# draw UI
+canvas.draw_text(&quot;Lives&quot;, [50, 50], 22, &quot;White&quot;)
+canvas.draw_text(&quot;Score&quot;, [680, 50], 22, &quot;White&quot;)
+canvas.draw_text(str(lives), [50, 80], 22, &quot;White&quot;)
+canvas.draw_text(str(score), [680, 80], 22, &quot;White&quot;)
+
+# draw ship and sprites
+my_ship.draw(canvas)
+
+for rock in rock_group:
+    rock.draw(canvas)
+    if my_ship.collide(rock):
+        explosion_group.add(my_ship)
+
+for missile in missile_group:
+    group_Collide(missile,rock_group)
+    missile.draw(canvas)
+
+if len(rock_remove)&gt;0:
+    rock_group.difference_update(rock_remove)
+    rock_remove.difference_update(rock_remove)
+
+# update ship and sprites
+my_ship.update()
+for rock in rock_group:
+    rock.update()
+for missile in missile_group:
+    missile.lifespan +=1
+    if missile.lifespan &gt; missile_info.lifespan*2:
+        missile_remove.add(missile)
+    missile.update()  
+
+if len(missile_remove)&gt;0:
+    missile_group.difference_update(missile_remove)
+    missile_remove.difference_update(missile_remove)    
+# draw splash screen if not started
+if not started:
+    canvas.draw_image(splash_image, splash_info.get_center(), 
+                      splash_info.get_size(), [WIDTH / 2, HEIGHT / 2], 
+                      splash_info.get_size())
+# restart game   
+if lives == 0 or started == False:
+    started = False
+    lives = 3
+    rock_group.difference_update(rock_group)
+</code></pre><h2 id="timer-handler-that-spawns-a-rock"><a href="#timer-handler-that-spawns-a-rock" class="headerlink" title="timer handler that spawns a rock"></a>timer handler that spawns a rock</h2><pre><code>def rock_spawner():
+global a_rock, rock_group
+rock_pos = [random.randrange(0, WIDTH), random.randrange(0, HEIGHT)]
+rock_vel = [random.random() * .6 - .3, random.random() * .6 - .3]
+rock_avel = random.random() * .2 - .1
+a_rock = Sprite(rock_pos, rock_vel, 0, rock_avel, asteroid_image, asteroid_info)
+if len(rock_group) &lt; 12:
+    rock_group.add(a_rock) 
+</code></pre><h3 id="initialize-stuff"><a href="#initialize-stuff" class="headerlink" title="initialize stuff"></a>initialize stuff</h3><p><code>frame = simplegui.create_frame(&quot;Asteroids&quot;, WIDTH, HEIGHT)</code></p>
+<h2 id="initialize-ship-and-two-sprites"><a href="#initialize-ship-and-two-sprites" class="headerlink" title="initialize ship and two sprites"></a>initialize ship and two sprites</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">my_ship = Ship([WIDTH / 2, HEIGHT / 2], [0, 0], 0, ship_image, ship_info)</div><div class="line">a_rock = Sprite([WIDTH / 3, HEIGHT / 3], [1, 1], 0, .1, asteroid_image, asteroid_info)</div><div class="line">a_missile = Sprite([2 * WIDTH / 3, 2 * HEIGHT / 3], [-1,1], 0, 0, missile_image, missile_info, missile_sound)</div></pre></td></tr></table></figure>
+<h2 id="register-handlers"><a href="#register-handlers" class="headerlink" title="register handlers"></a>register handlers</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">frame.set_keyup_handler(keyup)</div><div class="line">frame.set_keydown_handler(keydown)</div><div class="line">frame.set_mouseclick_handler(click)</div><div class="line">frame.set_draw_handler(draw)</div><div class="line"></div><div class="line">timer = simplegui.create_timer(1000.0, rock_spawner)</div></pre></td></tr></table></figure>
+<h2 id="get-things-rolling"><a href="#get-things-rolling" class="headerlink" title="get things rolling"></a>get things rolling</h2><p><code>timer.start()</code><br><code>frame.start()</code></p>
+
       
     </div>
     
@@ -388,8 +632,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Resume.html" rel="prev" title="My Resume">
-                My Resume <i class="fa fa-chevron-right"></i>
+              <a href="/R1.html" rel="prev" title="R Programming demo  - catch and analyze info on Website ">
+                R Programming demo  - catch and analyze info on Website  <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -442,8 +686,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -458,7 +711,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -469,7 +722,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">categories</span>
               
             </div>
@@ -480,7 +733,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               
             </div>
@@ -529,6 +782,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-for-game"><span class="nav-number">2.</span> <span class="nav-text">Link for game</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#implementation-of-Spaceship-program-template-for-RiceRocks"><span class="nav-number"></span> <span class="nav-text">implementation of Spaceship - program template for RiceRocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#globals-for-user-interface"><span class="nav-number">1.</span> <span class="nav-text">globals for user interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debris-Images"><span class="nav-number">2.</span> <span class="nav-text">Debris Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nebula-images-nebula-brown-png-nebula-blue-png"><span class="nav-number">3.</span> <span class="nav-text">nebula images - nebula_brown.png, nebula_blue.png</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#splash-image"><span class="nav-number">4.</span> <span class="nav-text">splash image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ship-image"><span class="nav-number">5.</span> <span class="nav-text">ship image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#missile-image"><span class="nav-number">6.</span> <span class="nav-text">missile image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asteroid-images"><span class="nav-number">7.</span> <span class="nav-text">asteroid images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#animated-explosion"><span class="nav-number">8.</span> <span class="nav-text">animated explosion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sound-assets-purchased-from-sounddogs-com"><span class="nav-number">8.1.</span> <span class="nav-text">sound assets purchased from sounddogs.com</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#helper-functions-to-handle-transformations"><span class="nav-number">9.</span> <span class="nav-text">helper functions to handle transformations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ship-class"><span class="nav-number"></span> <span class="nav-text">Ship class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sprite-class"><span class="nav-number"></span> <span class="nav-text">Sprite class</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#key-handlers-to-control-ship"><span class="nav-number">0.1.</span> <span class="nav-text">key handlers to control ship</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mouseclick-handlers-that-reset-UI-and-conditions-whether-splash-image-is-drawn"><span class="nav-number">0.2.</span> <span class="nav-text">mouseclick handlers that reset UI and conditions whether splash image is drawn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#timer-handler-that-spawns-a-rock"><span class="nav-number">1.</span> <span class="nav-text">timer handler that spawns a rock</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#initialize-stuff"><span class="nav-number">1.1.</span> <span class="nav-text">initialize stuff</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initialize-ship-and-two-sprites"><span class="nav-number">2.</span> <span class="nav-text">initialize ship and two sprites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#register-handlers"><span class="nav-number">3.</span> <span class="nav-text">register handlers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-things-rolling"><span class="nav-number">4.</span> <span class="nav-text">get things rolling</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
