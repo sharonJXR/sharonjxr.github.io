@@ -28,6 +28,18 @@
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
+        <image:image>
+
+            <image:loc>sharonjxr.github.io/images/13.jpg</image:loc>
+
+        </image:image>
+
+        <image:image>
+
+            <image:loc>sharonjxr.github.io/images/15.jpg</image:loc>
+
+        </image:image>
+
     </url>
 
     <url>
