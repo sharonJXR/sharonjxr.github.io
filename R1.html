@@ -373,7 +373,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/images/13.jpg" rel="gallery_cjl6dp5cx0008vgvdbyxp11st"
+                 href="/images/13.jpg" rel="gallery_cjl6yqdzb00062ovdce35kdgi"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/13.jpg" itemprop="contentUrl"/>
               </a>
@@ -381,7 +381,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="/images/15.JPG" rel="gallery_cjl6dp5cx0008vgvdbyxp11st"
+                 href="/images/15.JPG" rel="gallery_cjl6yqdzb00062ovdce35kdgi"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/15.JPG" itemprop="contentUrl"/>
               </a>
@@ -394,7 +394,25 @@
       
 
       
-        <h1 id="R-Analysis"><a href="#R-Analysis" class="headerlink" title="R Analysis"></a>R Analysis</h1><h2 id="for-most-popular-clothes-On-Stylenanda"><a href="#for-most-popular-clothes-On-Stylenanda" class="headerlink" title="for most popular clothes On Stylenanda"></a>for most popular clothes On Stylenanda</h2><h3 id="Beginning"><a href="#Beginning" class="headerlink" title="Beginning"></a>Beginning</h3><p> So today we gonna come through some simple data analysis to find the most popular clothes of famous brand “Stylenanda”.  (Data from <a href="http://en.stylenanda.com/" target="_blank" rel="external">http://en.stylenanda.com/</a>)</p>
+        <h1 id="R-Analysis"><a href="#R-Analysis" class="headerlink" title="R Analysis"></a>R Analysis</h1><p>File - new R Script<br>comments: #</p>
+<p>###Create a value/vector</p>
+<p>1+1 =&gt; [1] 2</p>
+<p>x = 1 + 1 ;<br>x<br>=&gt; [1] 2</p>
+<p>x = 1 + 1  =&gt; nothing</p>
+<p>grades = c(100,90,85,95); grades =&gt; [1] (100,90,85,95)<br>grades + 5=&gt;</p>
+<p>function: class(X) =&gt; data types of X(Numeric/Character)</p>
+<p>y = c(5,10,”15”,20) ; y is not numerial anymore though only one element is char, now y is chr and change into [1]”5”,”10”,”15”,”20”<br>function: char to numeric： y = as.numeric(y) =&gt; [1]  5 10 15 20<br>function: numeric to char as.character</p>
+<p>Trouble 1: run previous results neccessary; solution: #comments the variable</p>
+<p>NA means sth does not exist</p>
+<p>Remember 1: Variable[1] not V[0] prints the first one<br>Remember 2: Variable’s name should be combined without space between</p>
+<p>Print some positions of V:<br>V[1,2] correct into V[c(1,2)]<br>V[-2] is OK，but not V[-1,-2], it prints positions except positon 2</p>
+<p>###Metrix:<br>function data.frame(v1,v2) , if length of v1 is larger than v2 then v2’s vector in metrix will be repeated to fill the space.</p>
+<p>add another colomn to metrix: function cbind(data.frame(v1,v2), v3)</p>
+<p>function colnames/rownames(M)  = c(“”,””) to change the names</p>
+<p>function M[A,B] Row 1st, colomn 2nd show numbr on that position, A or B can be left empty to show the full colomn/row</p>
+<p>function: View(metrix) -&gt; show the table </p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">x = <span class="number">1</span>+<span class="number">1</span></div><div class="line"><span class="comment">#x</span></div><div class="line">grades = c(<span class="number">100</span>,<span class="number">90</span>, <span class="number">85</span>, <span class="number">95</span>)</div><div class="line"><span class="comment"># grades</span></div><div class="line">classes = c(<span class="string">"DS"</span>, <span class="string">"ss"</span>)</div><div class="line"><span class="comment"># classes</span></div><div class="line">class(classes)</div><div class="line">grades + <span class="number">5</span></div><div class="line">y = c(<span class="number">5</span>,<span class="number">10</span>,<span class="string">"15"</span>,<span class="number">20</span>)</div><div class="line">y = as.numeric(y)</div><div class="line"><span class="comment">#y</span></div><div class="line">y[<span class="number">1</span>]</div><div class="line"><span class="comment">#grades[c(1,2,4)]</span></div><div class="line"><span class="comment">#grades[-3,-4]</span></div><div class="line">Metrix1 = cbind(data.frame(y,classes),grades)</div><div class="line"><span class="comment">#View(Metrix1)</span></div><div class="line">rownames(Metrix1) = c(<span class="string">"stu1"</span>,<span class="string">"stu2"</span>,<span class="string">"stu3"</span>,<span class="string">"stu4"</span>)</div><div class="line">View(Metrix1)</div><div class="line">R</div></pre></td></tr></table></figure>
+<h2 id="R-Analysis-for-most-popular-clothes-On-Stylenanda-Shop"><a href="#R-Analysis-for-most-popular-clothes-On-Stylenanda-Shop" class="headerlink" title="R Analysis for most popular clothes On Stylenanda Shop"></a>R Analysis for most popular clothes On Stylenanda Shop</h2><h3 id="Beginning"><a href="#Beginning" class="headerlink" title="Beginning"></a>Beginning</h3><p> So today we gonna come through some simple data analysis to find the most popular clothes of famous brand “Stylenanda”.  (Data from <a href="http://en.stylenanda.com/" target="_blank" rel="external">http://en.stylenanda.com/</a>)</p>
 <h3 id="Step-1-catch-info"><a href="#Step-1-catch-info" class="headerlink" title="Step 1: catch info"></a>Step 1: catch info</h3><p>All the informations we need are the name  price, sales and comments of all the clothes.</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Library(rvest)</div><div class="line">Library(xml2)</div><div class="line">&gt; as&lt;-seq(<span class="number">60</span>,<span class="number">420</span>,<span class="number">60</span>) </div><div class="line">&gt; <span class="keyword">for</span>(s <span class="keyword">in</span> as)&#123; </div><div class="line">+ moda&lt;-read_html(<span class="string">"Stylenandas=60&amp;q=%C1%AC%D2%C2%C8%B9&amp;sort=s&amp;style=g&amp;from=sn_1_brand-qp&amp;active=2&amp;industryCatId=50025135&amp;type=pc#J_Filter"</span>,encoding=<span class="string">"GBK"</span>) +dress_name&lt;-html_nodes(moda,<span class="string">'.productTitle a'</span>)%&gt;%html_text</div><div class="line">&gt; dress_name&lt;-html_nodes(stylenanda,<span class="string">'.productTitle a'</span>)%&gt;%html_text </div><div class="line">&gt; dress_price&lt;-html_nodes(stylenanda,<span class="string">'.productPrice em'</span>)%&gt;%html_text </div><div class="line">&gt; sale_number&lt;-html_nodes(stylenanda,<span class="string">'.productStatus em'</span>)%&gt;%html_text</div><div class="line">&gt; the_comment&lt;-html_nodes(stylenanda,<span class="string">'.productStatus a'</span>)%&gt;%html_text </div><div class="line"></div><div class="line">+ &#125;</div><div class="line">&gt; dress&lt;-data.frame(dressname,dressprice,salenumber,thecomment)</div></pre></td></tr></table></figure>
 <h3 id="Step-2-Integrate-and-Standardize-our-data"><a href="#Step-2-Integrate-and-Standardize-our-data" class="headerlink" title="Step 2: Integrate and Standardize our data"></a>Step 2: Integrate and Standardize our data</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">library</span>(plyr) </div><div class="line">&gt; Unify variable name</div><div class="line">dress1&lt;rename(dress1,c(dress_name=<span class="string">"dressname"</span>,dress_price=<span class="string">"dressprice"</span>,sale_number=<span class="string">"salenumber"</span>,the_comment=<span class="string">"thecomment"</span>) </div><div class="line">&gt; Modadress &lt;-rbind(dress,dress1)</div></pre></td></tr></table></figure>
@@ -459,9 +477,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Demo/" rel="tag"># Demo</a>
-          
             <a href="/tags/R-Programming/" rel="tag"># R Programming</a>
+          
+            <a href="/tags/Demo/" rel="tag"># Demo</a>
           
         </div>
       
@@ -574,7 +592,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -585,7 +603,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -644,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R-Analysis"><span class="nav-number">1.</span> <span class="nav-text">R Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for-most-popular-clothes-On-Stylenanda"><span class="nav-number">1.1.</span> <span class="nav-text">for most popular clothes On Stylenanda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Beginning"><span class="nav-number">1.1.1.</span> <span class="nav-text">Beginning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-catch-info"><span class="nav-number">1.1.2.</span> <span class="nav-text">Step 1: catch info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Integrate-and-Standardize-our-data"><span class="nav-number">1.1.3.</span> <span class="nav-text">Step 2: Integrate and Standardize our data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Summarize-and-Visualize-data"><span class="nav-number">1.1.4.</span> <span class="nav-text">Step3: Summarize and Visualize data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-Get-the-data-we-what-and-rule-out-others"><span class="nav-number">1.1.5.</span> <span class="nav-text">Step 4: Get the data we what and rule out others</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Come-on-Just-follow-this-instruction-and-have-a-try-Use-R-to-find-any-info-about-items-of-your-favorite-brand"><span class="nav-number">1.1.5.0.1.</span> <span class="nav-text">Come on!  Just follow this instruction and have a try. Use R to find any info about items of  your favorite brand.</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R-Analysis"><span class="nav-number">1.</span> <span class="nav-text">R Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#R-Analysis-for-most-popular-clothes-On-Stylenanda-Shop"><span class="nav-number">1.1.</span> <span class="nav-text">R Analysis for most popular clothes On Stylenanda Shop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Beginning"><span class="nav-number">1.1.1.</span> <span class="nav-text">Beginning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-catch-info"><span class="nav-number">1.1.2.</span> <span class="nav-text">Step 1: catch info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Integrate-and-Standardize-our-data"><span class="nav-number">1.1.3.</span> <span class="nav-text">Step 2: Integrate and Standardize our data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Summarize-and-Visualize-data"><span class="nav-number">1.1.4.</span> <span class="nav-text">Step3: Summarize and Visualize data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-Get-the-data-we-what-and-rule-out-others"><span class="nav-number">1.1.5.</span> <span class="nav-text">Step 4: Get the data we what and rule out others</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Come-on-Just-follow-this-instruction-and-have-a-try-Use-R-to-find-any-info-about-items-of-your-favorite-brand"><span class="nav-number">1.1.5.0.1.</span> <span class="nav-text">Come on!  Just follow this instruction and have a try. Use R to find any info about items of  your favorite brand.</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
