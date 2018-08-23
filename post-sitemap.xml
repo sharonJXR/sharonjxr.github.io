@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>sharonjxr.github.io/1.html</loc>
+        <lastmod>2018-08-23T08:45:13.685Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>sharonjxr.github.io/JAVA1.html</loc>
-        <lastmod>2017-11-09T07:23:40.000Z</lastmod>
+        <lastmod>2017-11-09T23:23:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,7 @@
 
     <url>
         <loc>sharonjxr.github.io/Resume.html</loc>
-        <lastmod>2017-10-19T07:23:40.000Z</lastmod>
+        <lastmod>2017-10-19T22:23:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +32,7 @@
 
     <url>
         <loc>sharonjxr.github.io/R1.html</loc>
-        <lastmod>2017-09-09T07:23:40.000Z</lastmod>
+        <lastmod>2017-09-09T22:23:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -44,7 +52,7 @@
 
     <url>
         <loc>sharonjxr.github.io/Python1.html</loc>
-        <lastmod>2017-07-09T07:23:40.000Z</lastmod>
+        <lastmod>2017-07-09T22:23:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -52,7 +60,7 @@
 
     <url>
         <loc>sharonjxr.github.io/%20log1.html</loc>
-        <lastmod>2017-03-09T07:23:40.000Z</lastmod>
+        <lastmod>2017-03-09T23:23:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
