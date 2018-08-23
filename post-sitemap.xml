@@ -7,24 +7,8 @@
     </url>
 
     <url>
-        <loc>sharonjxr.github.io/WebScraping.html</loc>
-        <lastmod>2018-08-23T18:18:40.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>sharonjxr.github.io/JAVA1.html</loc>
-        <lastmod>2017-11-09T23:23:40.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>sharonjxr.github.io/R1.html</loc>
-        <lastmod>2017-09-09T22:23:40.000Z</lastmod>
+        <lastmod>2018-08-23T19:33:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -39,6 +23,22 @@
             <image:loc>sharonjxr.github.io/images/15.JPG</image:loc>
 
         </image:image>
+
+    </url>
+
+    <url>
+        <loc>sharonjxr.github.io/WebScraping.html</loc>
+        <lastmod>2018-08-23T18:18:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>sharonjxr.github.io/JAVA1.html</loc>
+        <lastmod>2017-11-09T23:23:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
 
     </url>
 
