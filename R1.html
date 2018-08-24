@@ -12,7 +12,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-<link rel="stylesheet" href="<%- config.root %>css/prettify.css" media="screen" type="text/css">
 
 
 
@@ -141,6 +140,7 @@
 
 
 
+<link href="/js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
 
   <title>R - catch and analyze info on Website  | Creative Mix</title>
   
@@ -377,7 +377,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/images/13.jpg" rel="gallery_cjl7y0sxi00009svdcj3lpydg"
+                 href="/images/13.jpg" rel="gallery_cjl7ygwa00005bovd6d78ntt9"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/13.jpg" itemprop="contentUrl"/>
               </a>
@@ -385,7 +385,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="/images/15.JPG" rel="gallery_cjl7y0sxi00009svdcj3lpydg"
+                 href="/images/15.JPG" rel="gallery_cjl7ygwa00005bovd6d78ntt9"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/15.JPG" itemprop="contentUrl"/>
               </a>
@@ -646,9 +646,9 @@ chart&lt;-data.frame(z,total)
       
         <div class="post-tags">
           
-            <a href="/tags/R-Programming/" rel="tag"># R Programming</a>
-          
             <a href="/tags/Demo/" rel="tag"># Demo</a>
+          
+            <a href="/tags/R-Programming/" rel="tag"># R Programming</a>
           
         </div>
       
@@ -1028,5 +1028,13 @@ $(window).load(function(){
 
   
 
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/lang-r.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })    
+</script>
 </body>
 </html>

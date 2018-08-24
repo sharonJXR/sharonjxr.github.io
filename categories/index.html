@@ -12,7 +12,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-<link rel="stylesheet" href="<%- config.root %>css/prettify.css" media="screen" type="text/css">
 
 
 
@@ -138,6 +137,7 @@
 
 
 
+<link href="/js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
 
   <title>categories | Creative Mix</title>
   
@@ -599,5 +599,13 @@ $(window).load(function(){
 
   
 
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="/js/google-code-prettify/lang-r.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })    
+</script>
 </body>
 </html>
