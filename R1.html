@@ -378,7 +378,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/images/13.jpg" rel="gallery_cjl80z6t10005vwvd4xdkd4pz"
+                 href="/images/13.jpg" rel="gallery_cjl810nw100086ovddnbvfjo7"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/13.jpg" itemprop="contentUrl"/>
               </a>
@@ -386,7 +386,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="/images/15.JPG" rel="gallery_cjl80z6t10005vwvd4xdkd4pz"
+                 href="/images/15.JPG" rel="gallery_cjl810nw100086ovddnbvfjo7"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/images/15.JPG" itemprop="contentUrl"/>
               </a>
@@ -437,180 +437,40 @@ f repeat: rep("HI",10)
  </pre>
 
 
-<h2 id="Metrix"><a href="#Metrix" class="headerlink" title="Metrix:"></a>Metrix:</h2><pre><code class="R">f data.frame(v1,v2) , if length of v1 is larger than v2 then v2&#39;s vector in metrix will be repeated to fill the space.
-
-add another colomn to metrix: f cbind(data.frame(v1,v2), v3)
-
-f colnames/rownames(M)  = c(&quot;&quot;,&quot;&quot;) to change the names
-
-f M[A,B] Row 1st, colomn 2nd show numbr on that position, A or B can be left empty to show the full colomn/row, B can be 1:2 or c(1,2) both OK!
-
-f: View(metrix) -&gt; show the table 
-
-f length, nrow, ncol, head()#head rows, tail()
-
-Sum Fuction: sum(data[,5]); sum(data$population)
-
-  - f countif &amp; if : X[X$region==1,] Return all information on states located in only 1(region ==1). nrow()to count . 
-Add conditions on colomn show only colomn: X[X$region==1,&quot;..&quot;or 1 ]
-
-  - f data[data$murder==max(data$murder), &quot;state&quot;] return the state of largest murder
-
-f: T/F matrix:  data[data$murder, 1]==max(data$murder) not data[data$murder==max(data$murder), ]
-
-f：ifelse()ifelse(data$illiteracy&lt;1, &quot;low&quot;,&quot;high&quot;)
-</code></pre>
-<h2 id="import-outside-data-source"><a href="#import-outside-data-source" class="headerlink" title="import outside data source"></a>import outside data source</h2><pre><code class="R">change/get working directory
-f getwd(); setwd(&quot;D:/AW/MSBA&amp;Programming合集/R&quot;);  
-
-open and save file: f data= read.csv(&quot;statedata.csv&quot;)];
-{% endcodeblock %}
-</code></pre>
-<h2 id="CODES"><a href="#CODES" class="headerlink" title="CODES"></a>CODES</h2><pre><code class="r">{% codeblock lang:R %}
-[
-
-x = 1+1
-#x
-
- 
-grades = c(100,90, 85, 95)
-# grades
-
-classes = c("DS", "ss")
-# classes
-
-class(classes)
-
-grades + 5
-
-y = c(5,10,"15",20)
-y = as.numeric(y)
-#y
-
-#y[1]
-
-#grades[c(1,2,4)]
-
-#grades[-3,-4]
-
-Metrix1 = cbind(data.frame(y,classes),grades)
-#View(Metrix1)
-
-
-rownames(Metrix1) = c("stu1","stu2","stu3","stu4")
-View(Metrix1)
-
-nrow(Metrix1)
-
-2:10
-seq(1,10)
-seq(to = 10, from = 1)
-seq(10,1) 
-seq(from = 1, to = 10, by = 2)
-
-rep("HI",10)
-
-data= read.csv("statedata.csv")
-View(data)
-
-tail(data)
-
-sum(data[,5])
-
-sum(data$population)
-
-nrow(data[data$region== 1 ,])
-
-data[data$illiteracy<0.7, "state"]="" #data[data$murder="=max(data$murder)" or="" data$murder="=min(data$murder)," "state"="" ]="" data[data$murder="=max(data$murder)" and="" ,1]="" data[data$murder,="" 1]="=max(data$murder)" data$illiteracycategory="ifelse(data$illiteracy<1," "low","high")="" data[data$illiteracycategory="="low",]" ];="" {%="" endcodeblock="" %}="" <="" code=""></0.7,></code></pre>
+<h2 id="Metrix"><a href="#Metrix" class="headerlink" title="Metrix:"></a>Metrix:</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">f data.frame(v1,v2) , <span class="keyword">if</span> length of v1 is larger than v2 then v2<span class="string">'s vector in metrix will be repeated to fill the space.</span></div><div class="line"></div><div class="line">add another colomn to metrix: f cbind(data.frame(v1,v2), v3)</div><div class="line"></div><div class="line">f colnames/rownames(M)  = c("","") to change the names</div><div class="line"></div><div class="line">f M[A,B] Row 1st, colomn 2nd show numbr on that position, A or B can be left empty to show the full colomn/row, B can be 1:2 or c(1,2) both OK!</div><div class="line"></div><div class="line">f: View(metrix) -&gt; show the table </div><div class="line"></div><div class="line">f length, nrow, ncol, head()#head rows, tail()</div><div class="line"></div><div class="line">Sum Fuction: sum(data[,5]); sum(data$population)</div><div class="line"></div><div class="line">  - f countif &amp; if : X[X$region==1,] Return all information on states located in only 1(region ==1). nrow()to count . </div><div class="line">Add conditions on colomn show only colomn: X[X$region==1,".."or 1 ]</div><div class="line"></div><div class="line">  - f data[data$murder==max(data$murder), "state"] return the state of largest murder</div><div class="line">  </div><div class="line">f: T/F matrix:  data[data$murder, 1]==max(data$murder) not data[data$murder==max(data$murder), ]</div><div class="line"></div><div class="line">f：ifelse()ifelse(data$illiteracy&lt;1, "low","high")</div></pre></td></tr></table></figure>
+<h2 id="import-outside-data-source"><a href="#import-outside-data-source" class="headerlink" title="import outside data source"></a>import outside data source</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">change/get working directory</div><div class="line">f getwd(); setwd(<span class="string">"D:/AW/MSBA&amp;Programming合集/R"</span>);  </div><div class="line"></div><div class="line">open and save file: f data= read.csv(<span class="string">"statedata.csv"</span>)];</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
+<h2 id="CODES"><a href="#CODES" class="headerlink" title="CODES"></a>CODES</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock lang:R %&#125;</div><div class="line">[</div><div class="line"></div><div class="line">x = <span class="number">1</span>+<span class="number">1</span></div><div class="line"><span class="comment">#x</span></div><div class="line"></div><div class="line"> </div><div class="line">grades = c(<span class="number">100</span>,<span class="number">90</span>, <span class="number">85</span>, <span class="number">95</span>)</div><div class="line"><span class="comment"># grades</span></div><div class="line"></div><div class="line">classes = c(<span class="string">"DS"</span>, <span class="string">"ss"</span>)</div><div class="line"><span class="comment"># classes</span></div><div class="line"></div><div class="line">class(classes)</div><div class="line"></div><div class="line">grades + <span class="number">5</span></div><div class="line"></div><div class="line">y = c(<span class="number">5</span>,<span class="number">10</span>,<span class="string">"15"</span>,<span class="number">20</span>)</div><div class="line">y = as.numeric(y)</div><div class="line"><span class="comment">#y</span></div><div class="line"></div><div class="line"><span class="comment">#y[1]</span></div><div class="line"></div><div class="line"><span class="comment">#grades[c(1,2,4)]</span></div><div class="line"></div><div class="line"><span class="comment">#grades[-3,-4]</span></div><div class="line"></div><div class="line">Metrix1 = cbind(data.frame(y,classes),grades)</div><div class="line"><span class="comment">#View(Metrix1)</span></div><div class="line"></div><div class="line"></div><div class="line">rownames(Metrix1) = c(<span class="string">"stu1"</span>,<span class="string">"stu2"</span>,<span class="string">"stu3"</span>,<span class="string">"stu4"</span>)</div><div class="line">View(Metrix1)</div><div class="line"></div><div class="line">nrow(Metrix1)</div><div class="line"></div><div class="line"><span class="number">2</span>:<span class="number">10</span></div><div class="line">seq(<span class="number">1</span>,<span class="number">10</span>)</div><div class="line">seq(to = <span class="number">10</span>, from = <span class="number">1</span>)</div><div class="line">seq(<span class="number">10</span>,<span class="number">1</span>) </div><div class="line">seq(from = <span class="number">1</span>, to = <span class="number">10</span>, by = <span class="number">2</span>)</div><div class="line"></div><div class="line">rep(<span class="string">"HI"</span>,<span class="number">10</span>)</div><div class="line"></div><div class="line">data= read.csv(<span class="string">"statedata.csv"</span>)</div><div class="line">View(data)</div><div class="line"></div><div class="line">tail(data)</div><div class="line"></div><div class="line">sum(data[,<span class="number">5</span>])</div><div class="line"></div><div class="line">sum(data$population)</div><div class="line"></div><div class="line">nrow(data[data$region== <span class="number">1</span> ,])</div><div class="line"></div><div class="line">data[data$illiteracy&lt;<span class="number">0.7</span>, <span class="string">"state"</span>]</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#data[data$murder==max(data$murder) or data$murder==min(data$murder), "state" ]</span></div><div class="line"></div><div class="line">data[data$murder==max(data$murder) and data$murder==min(data$murder) ,<span class="number">1</span>]</div><div class="line"></div><div class="line">data[data$murder, <span class="number">1</span>]==max(data$murder)</div><div class="line"></div><div class="line">data$illiteracyCategory = ifelse(data$illiteracy&lt;<span class="number">1</span>, <span class="string">"low"</span>,<span class="string">"high"</span>)</div><div class="line"></div><div class="line">data[data$illiteracyCategory==<span class="string">"low"</span>,] ];</div><div class="line"></div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
 <h2 id="R-Analysis-for-most-popular-clothes-On-Stylenanda-Shop"><a href="#R-Analysis-for-most-popular-clothes-On-Stylenanda-Shop" class="headerlink" title="R Analysis for most popular clothes On Stylenanda Shop"></a>R Analysis for most popular clothes On Stylenanda Shop</h2><h3 id="Beginning"><a href="#Beginning" class="headerlink" title="Beginning"></a>Beginning</h3><p> So today we gonna come through some simple data analysis to find the most popular clothes of famous brand “Stylenanda”.  (Data from <a href="http://en.stylenanda.com/" target="_blank" rel="external">http://en.stylenanda.com/</a>)</p>
 <h3 id="Step-1-catch-info"><a href="#Step-1-catch-info" class="headerlink" title="Step 1: catch info"></a>Step 1: catch info</h3><p>All the informations we need are the name  price, sales and comments of all the clothes.</p>
-<pre><code class="R">Library(rvest)
-Library(xml2)
-&gt; as&lt;-seq(60,420,60) 
-&gt; for(s in as){ 
-moda&lt;-read_html(&quot;Stylenandas=60&amp;q=%C1%AC%D2%C2%C8%B9&amp;sort=s&amp;style=g&amp;from=sn_1_brand-qp&amp;active=2&amp;industryCatId=50025135&amp;type=pc#J_Filter&quot;,encoding=&quot;GBK&quot;) +dress_name&lt;-html_nodes(moda,&#39;.productTitle a&#39;)%&gt;%html_text
-dress_name&lt;-html_nodes(stylenanda,&#39;.productTitle a&#39;)%&gt;%html_text 
-dress_price&lt;-html_nodes(stylenanda,&#39;.productPrice em&#39;)%&gt;%html_text sale_number&lt;-html_nodes(stylenanda,&#39;.productStatus em&#39;)%&gt;%html_text
-&gt; the_comment&lt;-html_nodes(stylenanda,&#39;.productStatus a&#39;)%&gt;%html_text 
-
-+ }
-&gt; dress&lt;-data.frame(dressname,dressprice,salenumber,thecomment)
-</code></pre>
-<h3 id="Step-2-Integrate-and-Standardize-our-data"><a href="#Step-2-Integrate-and-Standardize-our-data" class="headerlink" title="Step 2: Integrate and Standardize our data"></a>Step 2: Integrate and Standardize our data</h3><pre><code class="R">&gt; library(plyr) 
-&gt; Unify variable name
-dress1&lt;rename(dress1,c(dress_name=&quot;dressname&quot;,dress_price=&quot;dressprice&quot;,sale_number=&quot;salenumber&quot;,the_comment=&quot;thecomment&quot;) 
-&gt; Modadress &lt;-rbind(dress,dress1)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Library(rvest)</div><div class="line">Library(xml2)</div><div class="line">&gt; as&lt;-seq(<span class="number">60</span>,<span class="number">420</span>,<span class="number">60</span>) </div><div class="line">&gt; <span class="keyword">for</span>(s <span class="keyword">in</span> as)&#123; </div><div class="line">moda&lt;-read_html(<span class="string">"Stylenandas=60&amp;q=%C1%AC%D2%C2%C8%B9&amp;sort=s&amp;style=g&amp;from=sn_1_brand-qp&amp;active=2&amp;industryCatId=50025135&amp;type=pc#J_Filter"</span>,encoding=<span class="string">"GBK"</span>) +dress_name&lt;-html_nodes(moda,<span class="string">'.productTitle a'</span>)%&gt;%html_text</div><div class="line">dress_name&lt;-html_nodes(stylenanda,<span class="string">'.productTitle a'</span>)%&gt;%html_text </div><div class="line">dress_price&lt;-html_nodes(stylenanda,<span class="string">'.productPrice em'</span>)%&gt;%html_text sale_number&lt;-html_nodes(stylenanda,<span class="string">'.productStatus em'</span>)%&gt;%html_text</div><div class="line">&gt; the_comment&lt;-html_nodes(stylenanda,<span class="string">'.productStatus a'</span>)%&gt;%html_text </div><div class="line"></div><div class="line">+ &#125;</div><div class="line">&gt; dress&lt;-data.frame(dressname,dressprice,salenumber,thecomment)</div></pre></td></tr></table></figure>
+<h3 id="Step-2-Integrate-and-Standardize-our-data"><a href="#Step-2-Integrate-and-Standardize-our-data" class="headerlink" title="Step 2: Integrate and Standardize our data"></a>Step 2: Integrate and Standardize our data</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">library</span>(plyr) </div><div class="line">&gt; Unify variable name</div><div class="line">dress1&lt;rename(dress1,c(dress_name=<span class="string">"dressname"</span>,dress_price=<span class="string">"dressprice"</span>,sale_number=<span class="string">"salenumber"</span>,the_comment=<span class="string">"thecomment"</span>) </div><div class="line">&gt; Modadress &lt;-rbind(dress,dress1)</div></pre></td></tr></table></figure>
 <p>We got  the output for “Modadress$dressprice” , new column for the dress price</p>
-<pre><code class="R">[1] ￥399.00 ￥299.50 ￥749.00 ￥699.00 ￥112.00 ￥306.00 ￥298.00 ￥649.00
-  [9] ￥299.00 ￥279.00 ￥249.00 ￥299.50 ￥374.50 ￥324.50 ￥274.50 ￥324.50
- [17] ￥349.50 ￥199.00 ￥349.50 ￥699.00 ￥279.00 ￥349.00 ￥749.00 ￥199.00
- [25] ￥299.50 ￥324.50 ￥349.50 ￥349.50 ￥349.50 ￥324.50 ￥324.50 ￥299.0
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>] ￥<span class="number">399.00</span> ￥<span class="number">299.50</span> ￥<span class="number">749.00</span> ￥<span class="number">699.00</span> ￥<span class="number">112.00</span> ￥<span class="number">306.00</span> ￥<span class="number">298.00</span> ￥<span class="number">649.00</span></div><div class="line">  [<span class="number">9</span>] ￥<span class="number">299.00</span> ￥<span class="number">279.00</span> ￥<span class="number">249.00</span> ￥<span class="number">299.50</span> ￥<span class="number">374.50</span> ￥<span class="number">324.50</span> ￥<span class="number">274.50</span> ￥<span class="number">324.50</span></div><div class="line"> [<span class="number">17</span>] ￥<span class="number">349.50</span> ￥<span class="number">199.00</span> ￥<span class="number">349.50</span> ￥<span class="number">699.00</span> ￥<span class="number">279.00</span> ￥<span class="number">349.00</span> ￥<span class="number">749.00</span> ￥<span class="number">199.00</span></div><div class="line"> [<span class="number">25</span>] ￥<span class="number">299.50</span> ￥<span class="number">324.50</span> ￥<span class="number">349.50</span> ￥<span class="number">349.50</span> ￥<span class="number">349.50</span> ￥<span class="number">324.50</span> ￥<span class="number">324.50</span> ￥<span class="number">299.0</span></div></pre></td></tr></table></figure>
 <p>The number of dress sales :</p>
-<pre><code class="R">[1] 1198笔 1394笔 0笔    0笔    1笔    0笔    1934笔 64笔   836笔  1848笔 1203笔
- [12] 566笔  573笔  1380笔 1808笔 609笔  1776笔 1621笔 1162笔 348笔  470笔  397笔 
- [23] 446笔  364笔  468笔  579笔  666笔  362笔  776笔  770笔  617笔  611笔  791笔 
- [34] 154笔  781笔  275笔  1118笔 688笔  916笔  772笔  569笔  55笔   114笔  927笔 
- [45] 471笔  750笔  1117笔 734笔  798笔  208笔  620笔  492笔  298笔  160笔  846笔 
- [56] 902笔  109笔  345笔  802笔  101笔  688笔  912笔  774笔  569笔  55笔   115笔
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>] <span class="number">1198</span>笔 <span class="number">1394</span>笔 <span class="number">0</span>笔    <span class="number">0</span>笔    <span class="number">1</span>笔    <span class="number">0</span>笔    <span class="number">1934</span>笔 <span class="number">64</span>笔   <span class="number">836</span>笔  <span class="number">1848</span>笔 <span class="number">1203</span>笔</div><div class="line"> [<span class="number">12</span>] <span class="number">566</span>笔  <span class="number">573</span>笔  <span class="number">1380</span>笔 <span class="number">1808</span>笔 <span class="number">609</span>笔  <span class="number">1776</span>笔 <span class="number">1621</span>笔 <span class="number">1162</span>笔 <span class="number">348</span>笔  <span class="number">470</span>笔  <span class="number">397</span>笔 </div><div class="line"> [<span class="number">23</span>] <span class="number">446</span>笔  <span class="number">364</span>笔  <span class="number">468</span>笔  <span class="number">579</span>笔  <span class="number">666</span>笔  <span class="number">362</span>笔  <span class="number">776</span>笔  <span class="number">770</span>笔  <span class="number">617</span>笔  <span class="number">611</span>笔  <span class="number">791</span>笔 </div><div class="line"> [<span class="number">34</span>] <span class="number">154</span>笔  <span class="number">781</span>笔  <span class="number">275</span>笔  <span class="number">1118</span>笔 <span class="number">688</span>笔  <span class="number">916</span>笔  <span class="number">772</span>笔  <span class="number">569</span>笔  <span class="number">55</span>笔   <span class="number">114</span>笔  <span class="number">927</span>笔 </div><div class="line"> [<span class="number">45</span>] <span class="number">471</span>笔  <span class="number">750</span>笔  <span class="number">1117</span>笔 <span class="number">734</span>笔  <span class="number">798</span>笔  <span class="number">208</span>笔  <span class="number">620</span>笔  <span class="number">492</span>笔  <span class="number">298</span>笔  <span class="number">160</span>笔  <span class="number">846</span>笔 </div><div class="line"> [<span class="number">56</span>] <span class="number">902</span>笔  <span class="number">109</span>笔  <span class="number">345</span>笔  <span class="number">802</span>笔  <span class="number">101</span>笔  <span class="number">688</span>笔  <span class="number">912</span>笔  <span class="number">774</span>笔  <span class="number">569</span>笔  <span class="number">55</span>笔   <span class="number">115</span>笔</div></pre></td></tr></table></figure>
 <p>Then we need to filter and delete the unnecessary info </p>
-<pre><code class="R">Modadress$dressprice&lt;-gsub(&quot;￥&quot;,&quot;&quot;,Modadress$dressprice)
-Modadress$salenumber&lt;-gsub(&quot;笔&quot;,&quot;&quot;,Modadress$salenumber)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Modadress$dressprice&lt;-gsub(<span class="string">"￥"</span>,<span class="string">""</span>,Modadress$dressprice)</div><div class="line">Modadress$salenumber&lt;-gsub(<span class="string">"笔"</span>,<span class="string">""</span>,Modadress$salenumber)</div></pre></td></tr></table></figure>
 <p>Find their properties</p>
-<pre><code class="R">&gt; class(modadress$salenumber)
-[1] &quot;factor&quot;
-&gt;class(modadress$thecomment)
-[1] &quot;factor&quot; 
-&gt; class(dressprice) 
-[1] &quot;character&quot;
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; class(modadress$salenumber)</div><div class="line">[<span class="number">1</span>] <span class="string">"factor"</span></div><div class="line">&gt;class(modadress$thecomment)</div><div class="line">[<span class="number">1</span>] <span class="string">"factor"</span> </div><div class="line">&gt; class(dressprice) </div><div class="line">[<span class="number">1</span>] <span class="string">"character"</span></div></pre></td></tr></table></figure>
 <p>Change strings into number format:</p>
-<pre><code class="R">&gt; Modadress$dressprice&lt;-as.numeric(modadress$dressprice) 
-&gt; Modadress$salenumber&lt;-as.numeric(modadress$salenumber)
-&gt; Modadress$thecomment&lt;-as.numeric(modadress$thecomment)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; Modadress$dressprice&lt;-as.numeric(modadress$dressprice) </div><div class="line">&gt; Modadress$salenumber&lt;-as.numeric(modadress$salenumber)</div><div class="line">&gt; Modadress$thecomment&lt;-as.numeric(modadress$thecomment)</div></pre></td></tr></table></figure>
 <h3 id="Step3-Summarize-and-Visualize-data"><a href="#Step3-Summarize-and-Visualize-data" class="headerlink" title="Step3: Summarize and Visualize data"></a>Step3: Summarize and Visualize data</h3><p>Summarize data:</p>
-<pre><code class="R">group_by(Modadress,priceleve)%&gt;%summarise(price=mean(dressprice,na.rm=T),number=mean(salenumber,na.rm=T),comment=mean(thecomment,na.rm=T))
-# A tibble: 2 x 4
-  priceleve    price   number   comment
-     &lt;fctr&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1      high 722.5484 117.6774  39.90323
-2    normal 316.2674 703.0562 422.12360
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">group_by(Modadress,priceleve)%&gt;%summarise(price=mean(dressprice,na.rm=<span class="literal">T</span>),number=mean(salenumber,na.rm=<span class="literal">T</span>),comment=mean(thecomment,na.rm=<span class="literal">T</span>))</div><div class="line"><span class="comment"># A tibble: 2 x 4</span></div><div class="line">  priceleve    price   number   comment</div><div class="line">     &lt;fctr&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;</div><div class="line"><span class="number">1</span>      high <span class="number">722.5484</span> <span class="number">117.6774</span>  <span class="number">39.90323</span></div><div class="line"><span class="number">2</span>    normal <span class="number">316.2674</span> <span class="number">703.0562</span> <span class="number">422.12360</span></div></pre></td></tr></table></figure>
 <p>Visualize data in chart</p>
-<pre><code class="R">ggplot(Modadress,aes(x=dressprice,y=salenumber,color=thecomment))+geom_point()+scale_x_continuous(expand=c(0,0),breaks=c(100,200,300,400,500,600,700,800,900,1000,1100),labels=c(100,200,300,400,500,600,700,800,900,1000,1100))
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ggplot(Modadress,aes(x=dressprice,y=salenumber,color=thecomment))+geom_point()+scale_x_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>),breaks=c(<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">500</span>,<span class="number">600</span>,<span class="number">700</span>,<span class="number">800</span>,<span class="number">900</span>,<span class="number">1000</span>,<span class="number">1100</span>),labels=c(<span class="number">100</span>,<span class="number">200</span>,<span class="number">300</span>,<span class="number">400</span>,<span class="number">500</span>,<span class="number">600</span>,<span class="number">700</span>,<span class="number">800</span>,<span class="number">900</span>,<span class="number">1000</span>,<span class="number">1100</span>))</div></pre></td></tr></table></figure>
 <p><img src="images/13.jpg" width="500"></p>
 <p>From the picture,  a lot of clothes fall into the range of 200RMB-400RMB,  fewer cost more than 650RMB  and  none cost 400RMB-650RMB.</p>
 <p>Then in order to figure out the sales of clothes falling into each range, we need to recode the price at first and  add “pricelevel” variable after that. </p>
-<pre><code class="R">Modadress&lt;-within(Modadres,{
-pricelevel&lt;-&quot;NA&quot;
-pricelevel[dressprice&lt;450]&lt;-&quot;normal&quot;
-pricelevel[dressprice&gt;500]&lt;-&quot;high&quot;
-})
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Modadress&lt;-within(Modadres,&#123;</div><div class="line">pricelevel&lt;-<span class="string">"NA"</span></div><div class="line">pricelevel[dressprice&lt;<span class="number">450</span>]&lt;-<span class="string">"normal"</span></div><div class="line">pricelevel[dressprice&gt;<span class="number">500</span>]&lt;-<span class="string">"high"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Calculate  the sales of clothes falling into each range.</p>
-<pre><code class="R">total&lt;-tapply(Modadress$salenumber,Modadress$pricelevel,sum)
-&gt; total
-  high normal 
-  3648  62572
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">total&lt;-tapply(Modadress$salenumber,Modadress$pricelevel,sum)</div><div class="line">&gt; total</div><div class="line">  high normal </div><div class="line">  <span class="number">3648</span>  <span class="number">62572</span></div></pre></td></tr></table></figure>
 <p>Differences between two levels of sales are obvious. Now we shall draw into picture to show clearly.</p>
-<pre><code class="R">z&lt;-c(&quot;high&quot;,&quot;normal&quot;)
-chart&lt;-data.frame(z,total)
-&gt; wtp&lt;-ggplot(chart,aes(x=z,y=total))+geom_bar(stat=&quot;identity&quot;,fill=&quot;lightblue&quot;,width=0.5)+geom_text(aes(label=total),vjust=-0.2,colour=&quot;black&quot;,size=8)
-&gt; wtp+xlab(&quot;price&quot;)+ylab(&quot;sales&quot;)
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">z&lt;-c(<span class="string">"high"</span>,<span class="string">"normal"</span>)</div><div class="line">chart&lt;-data.frame(z,total)</div><div class="line">&gt; wtp&lt;-ggplot(chart,aes(x=z,y=total))+geom_bar(stat=<span class="string">"identity"</span>,fill=<span class="string">"lightblue"</span>,width=<span class="number">0.5</span>)+geom_text(aes(label=total),vjust=-<span class="number">0.2</span>,colour=<span class="string">"black"</span>,size=<span class="number">8</span>)</div><div class="line">&gt; wtp+xlab(<span class="string">"price"</span>)+ylab(<span class="string">"sales"</span>)</div></pre></td></tr></table></figure>
 <p><img src="images/14.jpg" width="500"></p>
 <h3 id="Step-4-Get-the-data-we-what-and-rule-out-others"><a href="#Step-4-Get-the-data-we-what-and-rule-out-others" class="headerlink" title="Step 4: Get the data we what and rule out others"></a>Step 4: Get the data we what and rule out others</h3><p>At first we need to specify the meaning of “Popolar clothers”. The standard I refer to is comment volume and sales volume.</p>
 <p>According to the figure above,  the lighter the color of the blue dot, the larger the comment volume. </p>
 <p>Set 1500 as  dividing line and choose the best-selling products.</p>
-<pre><code class="R">filter(Modadress,thecomment&gt;1500)%&gt;%arrange(desc(salenumber))
- dressname dressprice salenumber thecomment priceleve
-</code></pre>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">filter(Modadress,thecomment&gt;<span class="number">1500</span>)%&gt;%arrange(desc(salenumber))</div><div class="line"> dressname dressprice salenumber thecomment priceleve</div></pre></td></tr></table></figure>
 <p>Output:</p>
 <p>1 Self-Tie Collar Button-Down Shirt        279       1848       1557    normal<br>2 Check Pattern Buttoned Back Shirt        199       1621       1822  normal<br>3 Pre-Damaged Knit Cardigan      249       1203       1647  normal<br>4 Extended Sleeve Lettering Print Hoodie        399       1198       2059  normal</p>
 <p>Thus we got Top4 for most popular clothes:</p>
