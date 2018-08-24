@@ -429,8 +429,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script src="<%- config.root %>js/prettify.js"></script>
-<script src="<%- config.root %>js/lang-r.js"></script>
+        <script src="<%- config.root %>js/google-code-prettify/prettify.js"></script>
+<script src="<%- config.root %>js/google-code-prettify/lang-r.js"></script>
 <script type="text/javascript">
 $(window).load(function(){
  $('pre').addClass('prettyprint linenums');
@@ -452,6 +452,31 @@ $(window).load(function(){
 </div>
 
 
+<script>
+  var seconds = 1000;
+  var minutes = seconds * 60;
+  var hours = minutes * 60;
+  var days = hours * 24;
+  var years = days * 365;
+  var birthDay = Date.UTC(2016,07,30,00,00,00); // �������ý�վʱ��
+  setInterval(function() {
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = now - birthDay;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      document.getElementById('showDays').innerHTML="��վ������ "+diffYears+" �� "+diffDays+" �� "+diffHours+" Сʱ "+diffMinutes+" ���� "+diffSeconds+" ��";
+  }, 1000);
+</script>
 
         
 
