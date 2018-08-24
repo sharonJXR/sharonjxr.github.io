@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<link rel="stylesheet" href="<%- config.root %>css/prettify.css" media="screen" type="text/css">
 
 
 
@@ -148,6 +148,7 @@
 
 
 
+<link rel="stylesheet" href="<%- config.root %>css/prettify.css" media="screen" type="text/css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -447,7 +448,17 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <script src="<%- config.root %>js/prettify.js"></script>
+<script src="<%- config.root %>js/lang-r.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+ $('pre').addClass('prettyprint linenums');
+   prettyPrint();
+ })
+</script>
+
+
+<div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2018</span>
