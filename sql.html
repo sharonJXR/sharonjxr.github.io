@@ -374,6 +374,32 @@
 <h4 id="2-How-to-write-code"><a href="#2-How-to-write-code" class="headerlink" title="2. How to write code?"></a>2. How to write code?</h4><p>1) 第二行第六个图标 输入代码=》出结果</p>
 <h4 id="3-How-to-write-comments"><a href="#3-How-to-write-comments" class="headerlink" title="3. How to write comments?"></a>3. How to write comments?</h4><p>Shortcut :  CTRL + K  , cancel- CTRL + K +SHIFT</p>
 <h4 id="4-Some-common-mistakes-diffenrence-between-R-and-other-languages"><a href="#4-Some-common-mistakes-diffenrence-between-R-and-other-languages" class="headerlink" title="4. Some common mistakes - diffenrence between R and other languages."></a>4. Some common mistakes - diffenrence between R and other languages.</h4><p>   sql大小写无所谓（R有所谓）<br>   必须加;（R不加）<br>   where 在后面<br>  String用’’单引号（R“”双引号）但是命名用“”<br>  模糊搜索%</p>
+<h3 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h3><p>select o.id, a.name, o.total from orders o<br><strong>join</strong> accounts a<br><strong>on</strong> o.account_id = a.id where(and) a.name = ‘Walmart’</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">select</th>
+<th style="text-align:left">from</th>
+<th style="text-align:left"><strong>join</strong></th>
+<th><strong>on</strong></th>
+<th><strong>join</strong></th>
+<th><strong>on</strong></th>
+<th>where(and)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">o.id, a.name, o.total, <strong>distinct</strong>…</td>
+<td style="text-align:left">orders o</td>
+<td style="text-align:left">accounts a</td>
+<td>o.account_id = a.id</td>
+<td>inner相交/Left照顾到表一/Right照顾到表二/Outter join 全部</td>
+<td></td>
+<td>a.name = ‘Walmart’</td>
+</tr>
+</tbody>
+</table>
+<p>(where can be replaced by and)<br>(using(id) can <strong>only</strong> be used when the names of keys are same,  Otherwies, on ..=… plz）</p>
 
       
     </div>
@@ -491,7 +517,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -572,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-tips"><span class="nav-number">1.</span> <span class="nav-text">SQL tips</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pgAdmin3"><span class="nav-number">1.1.</span> <span class="nav-text">pgAdmin3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-How-to-open-a-data-file-in-pgAdmin3"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1. How to open a data file in pgAdmin3:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-How-to-write-code"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2. How to write code?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-How-to-write-comments"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3. How to write comments?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Some-common-mistakes-diffenrence-between-R-and-other-languages"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4. Some common mistakes - diffenrence between R and other languages.</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-tips"><span class="nav-number">1.</span> <span class="nav-text">SQL tips</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pgAdmin3"><span class="nav-number">1.1.</span> <span class="nav-text">pgAdmin3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-How-to-open-a-data-file-in-pgAdmin3"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1. How to open a data file in pgAdmin3:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-How-to-write-code"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2. How to write code?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-How-to-write-comments"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3. How to write comments?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Some-common-mistakes-diffenrence-between-R-and-other-languages"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4. Some common mistakes - diffenrence between R and other languages.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JOIN"><span class="nav-number">1.1.1.</span> <span class="nav-text">JOIN</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
