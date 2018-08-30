@@ -382,15 +382,23 @@
 <li><p>Sumproduct(Matrix1, Matrix2): 相同位置乘积和</p>
 </li>
 <li><p>Year( [Date] ), Right( [Cell], N), Round( [Number], 0),Floor( [Number], 1) ,</p>
-<h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix:"></a>Matrix:</h4></li>
+</li>
 </ul>
-<ol>
-<li>Sum\Count\Product\Max\Min(Array[])</li>
-<li>Percentile,Countif(Matrix, X) Match,Index(X,Matrix), <ul>
+<h4 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix:"></a>Matrix:</h4><ol>
+<li><strong>Sum\Count\Product\Max\Min</strong>(Array[])</li>
+<li><strong>Percentile</strong>,<strong>Countif</strong>(Matrix, X) <strong>Match</strong>,<strong>Index</strong>(X,Matrix), <ul>
 <li>Eg: =Index(Match( Max( [Salary Array] ), [Salary Array], 0), [Employee Name Array] )</li>
 </ul>
 </li>
-<li>If(C,V1,V2), And(C1,C2..), Or(C1,C2…), 1*(Statement)</li>
+<li>boolean(TRUE/FALSE): <strong>If</strong>(C,V1,V2), <strong>And</strong>(C1,C2..), <strong>Or</strong>(C1,C2…), 1*(Statement)</li>
+</ol>
+<h2 id="DATA-TABLE"><a href="#DATA-TABLE" class="headerlink" title="DATA TABLE"></a>DATA TABLE</h2><p>(1)如果是单行/单列的改变值，就在那一行/列的下面/右面的第一行第一个数字里 写入最后值的格子公式<br>(2) 行列同时改变，就在坐上角的交点格子里输入公式， 点data-table后 输入行列改变的那个位置</p>
+<h3 id="Frequency-Table-Histogram"><a href="#Frequency-Table-Histogram" class="headerlink" title="Frequency Table/Histogram"></a>Frequency Table/Histogram</h3><p>数据分析加载项-直方图-（用于计算一组数的频率，在一个区域内填入从小到大的bins， 选中original data set+bins = table frequency = &gt;make histogram)</p>
+<p><strong>How to make bins?</strong><br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">=<span class="built_in">FLOOR</span>(x,<span class="number">1</span>) </div><div class="line">=<span class="built_in">FLOOR</span>(x/<span class="built_in">N</span>,<span class="number">1</span>)× <span class="built_in">N</span></div><div class="line">=<span class="built_in">FLOOR</span>(x×<span class="built_in">N</span>,<span class="number">1</span>)/<span class="built_in">N</span></div></pre></td></tr></table></figure></p>
+<h1 id="Spreadsheet-Modeling-Regression"><a href="#Spreadsheet-Modeling-Regression" class="headerlink" title="Spreadsheet Modeling - Regression"></a>Spreadsheet Modeling - Regression</h1><ol>
+<li>数据分析加载项-描述统计-</li>
+<li>Data - data analysis - regression - </li>
+<li>Plot  -》 trendline + R/equations</li>
 </ol>
 
       
@@ -432,7 +440,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Stas.html" rel="next" title="Web Scraping with Python & BeautifulSoup">
+              <a href="/WebScraping.html" rel="next" title="Web Scraping with Python & BeautifulSoup">
                 <i class="fa fa-chevron-left"></i> Web Scraping with Python & BeautifulSoup
               </a>
             
@@ -602,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spreadsheet-Modeling-Excel-Foundations"><span class="nav-number">1.</span> <span class="nav-text">Spreadsheet Modeling - Excel Foundations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SHORTCUT"><span class="nav-number">1.1.</span> <span class="nav-text">SHORTCUT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">1.2.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Matrix"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">Matrix:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spreadsheet-Modeling-Excel-Foundations"><span class="nav-number">1.</span> <span class="nav-text">Spreadsheet Modeling - Excel Foundations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SHORTCUT"><span class="nav-number">1.1.</span> <span class="nav-text">SHORTCUT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">1.2.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Matrix"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">Matrix:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DATA-TABLE"><span class="nav-number">1.3.</span> <span class="nav-text">DATA TABLE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-Table-Histogram"><span class="nav-number">1.3.1.</span> <span class="nav-text">Frequency Table/Histogram</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spreadsheet-Modeling-Regression"><span class="nav-number">2.</span> <span class="nav-text">Spreadsheet Modeling - Regression</span></a></li></ol></div>
             
 
           </div>
